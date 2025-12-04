@@ -25,6 +25,7 @@ export const ChatProvider = ({ children }) => {
     setLoading(false);
   };
   
+  
 
   const setAnimationChat = async (animationName) => {
     setLoading(true);

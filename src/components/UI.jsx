@@ -150,7 +150,7 @@ export const UI = ({ hidden, ...props }) => {
       <div className="fixed top-0 left-0 right-0 bottom-0 z-10 flex justify-between p-4 flex-col pointer-events-none">
         <div className="w-full flex flex-col items-end justify-center gap-4">
           <button
-            onClick={() => setCameraZoomed(!cameraZoomed)}
+            onClick={() => setCameraZoomed(!cameraZoomed)}  // aquí se está revissando el tema del cambio de posición de camara con respecto del visor
             className="pointer-events-auto bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-md"
           >
             {cameraZoomed ? (

@@ -42,21 +42,22 @@ export const Experience = () => {
   const { cameraZoomed } = useChat();
 
   useEffect(() => {
-    cameraControls.current.setLookAt(0, 2, 5, 0, 1.5, 0);
+    cameraControls.current.setLookAt(-0.4, 1.6, 1.6, -0.4, 1.5, 1, true);
   }, []);
 
   useEffect(() => {
     if (cameraZoomed) {
-      cameraControls.current.setLookAt(0, 1.5, 1.5, 0, 1.5, 0, true);
+      cameraControls.current.setLookAt(-0.1, 2, 1.5, -0.4, 1.5, 0, true);
     } else {
-      cameraControls.current.setLookAt(0, 2.2, 5, 0, 1.0, 0, true);
+      cameraControls.current.setLookAt(0, 1.5, 1.6, -0.4, 1.5, 1, true);
     }
   }, [cameraZoomed]);
   return (
   <>
-    <CameraControls ref={cameraControls} />
+    <CameraControls ref={cameraControls}  makeDefault  mouseButtons={{ left: 0, middle: 0, right: 0 }}/>
     <Environment preset="sunset" />
     <Suspense>
+      {/* camera={{ position: [0, 0, 1], fov: 30 }} */}
       <Dots position-y={1.75} position-x={-0.02} />
     </Suspense>
     <Avatar />
